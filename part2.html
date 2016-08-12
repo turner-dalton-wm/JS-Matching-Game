@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matching Game</title>
+    <style>
+        div {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+        div#rightSide {
+            left: 500px;
+            border-left: 1px solid black;
+        }
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<h3>Matching Game</h3>
+<div id="leftSide"></div>
+<div id="rightSide"></div>
+<script>
+    var leftSide = document.getElementById("leftSide");
+    var rightSide = document.getElementById("rightSide");
+    var numberOfFaces = 5;
+    function generateFaces() {
+        for(var i = 0; i < numberOfFaces; i++) {
+            var img = document.createElement("img");
+            img.src = "sprite.png";
+            img.style.left = Math.random() * 436 + "px";
+            img.style.top = Math.random() * 436 + "px";
+            img.width = "64";
+            img.height = "64";
+            leftSide.appendChild(img);
+        }
+    }
+    generateFaces();
+</script>
+</body>
+</html>
